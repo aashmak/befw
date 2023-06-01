@@ -18,13 +18,11 @@ type HTTPServer struct {
 	Server    *http.Server
 	chiRouter chi.Router
 	Storage   storage.Storage
-	KeySign   []byte
 }
 
 func NewServer(ctx context.Context, cfg *Config) *HTTPServer {
 	httpserver := HTTPServer{
 		chiRouter: chi.NewRouter(),
-		KeySign:   []byte(cfg.KeySign),
 	}
 
 	if cfg.DatabaseDSN != "" {

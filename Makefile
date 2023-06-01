@@ -1,7 +1,7 @@
 build:
 	go build -o agent cmd/agent/main.go
 	go build -o server cmd/server/main.go
-	go build -o server cmd/befwctl/*.go
+	go build -o befwctl cmd/befwctl/*.go
 
 test:
 	go test -v befw/internal/...
